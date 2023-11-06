@@ -9,17 +9,17 @@ public class Producto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_producto")
     private Integer idProducto;
-    @Column(name = "nombre")//no es necesaria esta anotacion @Column ya que eñ atributo es igual al de la base de datos
+//no es necesaria esta anotacion @Column ya que eñ atributo es igual al de la base de datos
     private String nombre;
     @Column(name = "id_categoria")
-    private int idCategoria;
+    private Integer idCategoria;
     @Column(name = "codigo_barras")
     private String codigoBarras;
     @Column(name = "precio_venta")
-    private Float precioVenta;
+    private Double precioVenta;
     @Column(name = "cantidad_stock")
-    private int cantidadStock;
-    @Column(name = "estado")//igualmente @Column no es necesario ya que tanto el atributo de la clase es igual al de la entoidad de la base de datos
+    private Integer cantidadStock;
+//igualmente @Column no es necesario ya que tanto el atributo de la clase es igual al de la entoidad de la base de datos
     private Boolean estado;
 
     @ManyToOne
@@ -58,11 +58,11 @@ public class Producto {
         this.codigoBarras = codigoBarras;
     }
 
-    public Float getPrecioVenta() {
+    public Double getPrecioVenta() {
         return precioVenta;
     }
 
-    public void setPrecioVenta(Float precioVenta) {
+    public void setPrecioVenta(Double precioVenta) {
         this.precioVenta = precioVenta;
     }
 
@@ -80,5 +80,13 @@ public class Producto {
 
     public void setEstado(Boolean estado) {
         this.estado = estado;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 }
